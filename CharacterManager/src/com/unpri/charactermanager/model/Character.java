@@ -75,6 +75,9 @@ public class Character {
         }
         this.mana = mana;
     }
+        public boolean isAlive() {
+        return hitPoints > 0;    // hidup jika HP masih di atas 0
+    }
 
     // ===== toString(): representasi teks object, berguna untuk debugging =====
     @Override
