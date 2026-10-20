@@ -25,5 +25,13 @@ public class Main {
         System.out.println(">> Nama karakter: " + hero.getName());
         System.out.println(">> Jenis karakter: " + hero.getType());
         System.out.println(">> HP saat ini: " + hero.getHitPoints());
+        
+        // ===== Mini-Challenge: mana dan isAlive() =====
+        System.out.println("\n=== Mini-Challenge: Mana dan isAlive() ===");
+        Character seraphina = new Character("Seraphina", CharacterType.HEALER, 2);
+        seraphina.setMana(80);
+        System.out.println(seraphina);
+        System.out.println(">> Mana Seraphina: " + seraphina.getMana());
+        System.out.println(">> isAlive() Seraphina: " + seraphina.isAlive());
     }
 }
