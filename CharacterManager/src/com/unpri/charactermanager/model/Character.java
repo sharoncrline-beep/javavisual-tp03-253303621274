@@ -87,7 +87,8 @@ public class Character {
                ", type=" + type +
                ", level=" + level +
                ", hp=" + hitPoints +
-               ", atk=" + attackPower + '}';
+               ", atk=" + attackPower + 
+               ", mana=" + mana + '}';
     }
 
 }   // kurung kurawal penutup CLASS Character — pastikan jumlah buka/tutup seimbang!
