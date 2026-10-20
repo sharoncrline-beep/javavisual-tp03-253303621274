@@ -14,6 +14,7 @@ public class Character {
     private int level;
     private int hitPoints;
     private int attackPower;
+    private int mana;
 
     // ===== CONSTRUCTOR 1: untuk membuat karakter BARU =====
     // Dipakai saat user membuat karakter dari form (belum punya id dari database)
@@ -51,19 +52,28 @@ public class Character {
     public int getLevel() { return level; }
     public int getHitPoints() { return hitPoints; }
     public int getAttackPower() { return attackPower; }
+    public int getMana() { return mana; }
+    
 
     // ===== SETTER: cara AMAN mengubah atribut, dengan VALIDASI =====
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setLevel(int level) {
+      public void setLevel(int level) {
         if (level < 1) {                       // validasi: level tidak boleh kurang dari 1
             throw new IllegalArgumentException("Level minimal adalah 1");
         }
         this.level = level;
         this.hitPoints = calculateBaseHP();      // statistik dihitung ULANG setiap level berubah
         this.attackPower = calculateBaseAttack();
+    }
+
+    public void setMana(int mana) {
+        if (mana < 0) {                        // validasi: mana tidak boleh negatif
+            throw new IllegalArgumentException("Mana tidak boleh negatif");
+        }
+        this.mana = mana;
     }
 
     // ===== toString(): representasi teks object, berguna untuk debugging =====
