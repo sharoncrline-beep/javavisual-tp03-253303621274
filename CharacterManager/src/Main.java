@@ -5,7 +5,7 @@ import com.unpri.charactermanager.model.CharacterManager;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("=== Character Manager v0.2 — CRUD Test ===\n");
+        System.out.println("=== Character Manager v0.2 - CRUD Test ===\n");
 
         CharacterManager manager = new CharacterManager();
 
@@ -57,5 +57,13 @@ public class Main {
 
         System.out.println("Total di manager asli: " + manager.getTotalCharacters());
         System.out.println("Total di salinan list : " + salinanList.size());
+                // ===== Mini-Challenge: getAverageLevel dan findByType =====
+        System.out.println("\n--- Mini-Challenge TP5 ---");
+        System.out.println("Rata-rata level: " + manager.getAverageLevel());
+        System.out.println("Karakter WARRIOR: " + manager.findByType(CharacterType.WARRIOR));
+        System.out.println("Karakter HEALER : " + manager.findByType(CharacterType.HEALER));
+
+        CharacterManager kosong = new CharacterManager();
+        System.out.println("Rata-rata list kosong: " + kosong.getAverageLevel());
     }
 }
