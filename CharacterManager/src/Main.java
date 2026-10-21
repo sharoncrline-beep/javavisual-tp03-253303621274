@@ -65,5 +65,10 @@ public class Main {
 
         CharacterManager kosong = new CharacterManager();
         System.out.println("Rata-rata list kosong: " + kosong.getAverageLevel());
+                // ===== Bagian C: countByType =====
+        System.out.println("\n--- Fitur Mandiri: countByType ---");
+        System.out.println("Jumlah WARRIOR: " + manager.countByType(CharacterType.WARRIOR));
+        System.out.println("Jumlah MAGE   : " + manager.countByType(CharacterType.MAGE));
+        System.out.println("Jumlah HEALER : " + manager.countByType(CharacterType.HEALER));
     }
 }

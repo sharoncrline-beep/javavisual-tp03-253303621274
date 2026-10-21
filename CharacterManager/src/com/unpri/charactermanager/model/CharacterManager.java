@@ -94,6 +94,21 @@ public class CharacterManager {
             }
         }
         return hasil;
+    
+    }
+        /**
+     * Menghitung jumlah karakter dengan tipe tertentu.
+     * Hanya mengembalikan angka, sehingga ArrayList asli tidak terekspos.
+     * @return jumlah karakter bertipe tersebut (0 jika tidak ada)
+     */
+    public int countByType(CharacterType type) {
+        int jumlah = 0;
+        for (Character c : characterList) {
+            if (c.getType() == type) {
+                jumlah++;
+            }
+        }
+        return jumlah;
     }
 
 }
