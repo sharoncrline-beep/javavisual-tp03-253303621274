@@ -39,5 +39,23 @@ public class Main {
         for (Character c : manager.getAllCharacters()) {
             System.out.println(c);
         }
+                // ===== EKSPERIMEN: Object Reference =====
+        System.out.println("\n--- Eksperimen Reference ---");
+
+        Character asli = manager.findByName("Arjuna");
+        Character duplikatReferensi = asli;             // menyalin REFERENSI, bukan membuat object baru
+
+        System.out.println("Level Arjuna sebelum: " + asli.getLevel());
+        duplikatReferensi.setLevel(99);                  // mengubah LEWAT variabel lain
+
+        System.out.println("Level Arjuna sesudah (lewat 'asli'): " + asli.getLevel());
+        System.out.println("asli == duplikatReferensi? " + (asli == duplikatReferensi));
+
+        // Bandingkan dengan getAllCharacters() yang mengembalikan SALINAN LIST:
+        java.util.ArrayList<Character> salinanList = manager.getAllCharacters();
+        salinanList.add(new Character("Hantu", CharacterType.MAGE, 1));   // tambah ke SALINAN list
+
+        System.out.println("Total di manager asli: " + manager.getTotalCharacters());
+        System.out.println("Total di salinan list : " + salinanList.size());
     }
 }
