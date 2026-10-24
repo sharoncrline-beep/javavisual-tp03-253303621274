@@ -14,6 +14,8 @@ public class Main {
         manager.addCharacter(new Character("Arjuna", CharacterType.WARRIOR, 5));
         manager.addCharacter(new Character("Merlin", CharacterType.MAGE, 3));
         manager.addCharacter(new Character("Athena", CharacterType.ARCHER, 4));
+        manager.addCharacter(new Character("Lancelot", CharacterType.WARRIOR, 7));
+        manager.addCharacter(new Character("Morgana", CharacterType.MAGE, 6));
         
         // 2. Jalankan GUI di Event Dispatch Thread
         SwingUtilities.invokeLater(() -> {
