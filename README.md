@@ -10,12 +10,12 @@ Mata kuliah Java Visual.
 ## TP8 - MainWindow, Data Dinamis & MVC
 
 ### Tampilan MainWindow
-![MainWindow dengan 5 karakter dan statistik](<Screenshots/AP10-5 Karakter.png>)
+![MainWindow dengan 5 karakter dan statistik](screenshots/tp08-sesudah.png)
 
 Jendela menampilkan 5 karakter beserta label statistik "Rata-rata Level".
 Sebagai bukti statistik bersifat dinamis, berikut tampilan sebelum data ditambah:
 
-![MainWindow sebelum data diubah](<Screenshots/AP10-3 Karakter.png>)
+![MainWindow sebelum data diubah](screenshots/tp08-sebelum.png)
 
 ### Alur Data: Main → CharacterManager → MainWindow
 Di `Main.java`, data dibuat lebih dulu dengan membuat objek `CharacterManager`
