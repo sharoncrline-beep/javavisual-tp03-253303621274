@@ -14,15 +14,14 @@ public class Main {
         manager.addCharacter(new Character("Arjuna", CharacterType.WARRIOR, 5));
         manager.addCharacter(new Character("Merlin", CharacterType.MAGE, 3));
         manager.addCharacter(new Character("Athena", CharacterType.ARCHER, 4));
-        manager.addCharacter(new Character("Lancelot", CharacterType.WARRIOR, 7));
-        manager.addCharacter(new Character("Morgana", CharacterType.MAGE, 6));
+        manager.addCharacter(new Character("Gatotkaca", CharacterType.WARRIOR, 7)); // level tinggi
+        manager.addCharacter(new Character("Morgana", CharacterType.MAGE, 1));      // level rendah
+        manager.addCharacter(new Character("Ranger", CharacterType.ARCHER, 6));
         
         // 2. Jalankan GUI di Event Dispatch Thread
-        SwingUtilities.invokeLater(() -> {
-            MainWindow window = new MainWindow(
-                    manager.getAllCharacters(),
-                    manager.getAverageLevel());
-            window.setVisible(true);
-        });
+           SwingUtilities.invokeLater(() -> {
+       MainWindow window = new MainWindow(manager.getAllCharacters());
+       window.setVisible(true);
+    });
     }
 }
