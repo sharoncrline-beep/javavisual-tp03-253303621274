@@ -1,37 +1,71 @@
-# Character Manager
+## TP10 - Theming, Properti Komponen & Analisis MVC
 
-Aplikasi manajemen karakter game berbasis Java dengan arsitektur MVC
-(`model/`, `view/`, `controller/`).
-Mata kuliah Java Visual.
+### Tampilan Sebelum dan Sesudah
 
-**Nama:** Sharon Caroline Pardede<br>
-**NIM:** 253303621274
+**Sebelum (MainWindow v0.3)**
 
-## TP8 - MainWindow, Data Dinamis & MVC
+![Character Manager v0.3](screenshots/tp08-sebelum.png)
 
-### Tampilan MainWindow
-![MainWindow dengan 5 karakter dan statistik](screenshots/tp08-sesudah.png)
+Versi v0.3 menampilkan daftar karakter menggunakan tampilan sederhana
+tanpa tema warna kartu berdasarkan role.
 
-Jendela menampilkan 5 karakter beserta label statistik "Rata-rata Level".
-Sebagai bukti statistik bersifat dinamis, berikut tampilan sebelum data ditambah:
+**Sesudah (MainWindow v0.4)**
 
-![MainWindow sebelum data diubah](screenshots/tp08-sebelum.png)
+![Character Manager v0.4](screenshots/AP13%20sesudah.png)
 
-### Alur Data: Main → CharacterManager → MainWindow
-Di `Main.java`, data dibuat lebih dulu dengan membuat objek `CharacterManager`
-dan memanggil `addCharacter()` untuk tiap karakter (layer Model). Lalu `Main`
-mengambil daftar karakter lewat `getAllCharacters()` dan nilai rata-rata lewat
-`getAverageLevel()`, kemudian meneruskannya ke constructor `MainWindow`
-di dalam `SwingUtilities.invokeLater()`. `MainWindow` (layer View) hanya
-menerima data tersebut, melakukan loop untuk membuat satu `JLabel` per karakter,
-dan menampilkannya tanpa menghitung apa pun sendiri. Dengan begitu View tidak
-mengelola data dan tidak memuat logika bisnis, sesuai pemisahan tanggung jawab MVC.
+Versi v0.4 menggunakan tema gelap dengan warna kartu berbeda sesuai role
+karakter. Karakter dengan level 5 atau lebih ditampilkan menggunakan teks
+berwarna emas dan tebal. Aplikasi juga menggunakan tooltip dan perubahan
+cursor sebagai properti tambahan.
 
-### Karakter Baru
-| Nama | Tipe | Level | Alasan Pemilihan |
-|------|------|-------|------------------|
-| Lancelot | WARRIOR | 7 | Dipilih level tinggi agar terlihat jelas pengaruhnya terhadap statistik: rata-rata level naik dari 4.0 menjadi 5.0. Tipe WARRIOR dipilih karena sudah ada Arjuna sebagai WARRIOR, sehingga bisa dicek bahwa dua karakter bertipe sama tetap tampil terpisah dan nilai HP/ATK-nya dihitung dari levelnya masing-masing. |
-| Morgana | MAGE | 6 | Dipilih level menengah ke atas agar data lebih bervariasi dan rata-rata tidak hanya dipengaruhi satu karakter. Tipe MAGE dipilih untuk melengkapi Merlin, dan membuktikan bahwa daftar dinamis bisa menampilkan beberapa karakter dari tipe yang sama. |
+### Implementasi AppTheme
 
-### Analisis (Bagian D)
-Link Google Docs: https://docs.google.com/document/d/1WVmngzsOWoh9T_Mm46afnY-ibliMNr3sEPrIgVUH9A4/edit?tab=t.0
+Pengaturan tampilan aplikasi dipusatkan di `AppTheme.java` yang berada
+di package `view`. AppTheme menyediakan palet warna, font, border, serta
+method `colorFor()` untuk menentukan warna kartu berdasarkan role karakter.
+
+`MainWindow` menggunakan pengaturan dari AppTheme untuk menampilkan judul
+dan kartu karakter. Kartu karakter menggunakan `setOpaque(true)` agar warna
+latar terlihat, sedangkan ukuran jendela menyesuaikan komponen menggunakan
+`pack()`.
+
+### Mini-Challenge: Level Tinggi
+
+Karakter dengan level 5 atau lebih mendapatkan teks berwarna emas dan tebal.
+Batas level tinggi disimpan dalam konstanta bernama
+`HIGH_LEVEL_THRESHOLD` di AppTheme.
+
+Karakter yang memenuhi kondisi tersebut antara lain Arjuna (level 5),
+Gatotkaca (level 7), dan Ranger (level 6).
+
+### Properti Komponen Tambahan
+
+**1. Tooltip (`setToolTipText()`)**
+
+Tooltip menampilkan penjelasan singkat mengenai role karakter ketika cursor
+diarahkan ke kartu. Properti ini membantu pengguna memahami karakter tanpa
+menambah banyak teks pada tampilan utama.
+
+**2. Cursor (`setCursor()`)**
+
+Cursor diubah menjadi bentuk tangan menggunakan `Cursor.HAND_CURSOR`
+ketika diarahkan ke kartu karakter. Hal ini memberikan petunjuk visual
+kepada pengguna bahwa komponen tersebut memiliki potensi interaksi.
+
+### Pemisahan Warna dalam MVC
+
+Warna disimpan di `AppTheme` karena warna merupakan bagian dari pengaturan
+tampilan aplikasi yang termasuk tanggung jawab layer View. `Character`
+sebagai Model hanya menyimpan data karakter seperti nama, role, level,
+HP, dan ATK.
+
+Dengan memisahkan warna dari Model, data karakter dapat digunakan kembali
+pada tampilan yang berbeda tanpa bergantung pada aturan visual tertentu.
+Selain itu, perubahan tema dapat dilakukan di AppTheme tanpa perlu
+mengubah kode Model. Pemisahan ini menjaga prinsip MVC, yaitu Model
+mengelola data dan logika bisnis, sedangkan View bertanggung jawab
+terhadap tampilan.
+
+### Analisis Properti & MVC (Bagian D)
+
+Link Google Docs: https://docs.google.com/document/d/1BlCfHTOSXwXQEibUCTakaCCLW-2-DNsKCJT1Lels13A/edit?tab=t.0
