@@ -17,7 +17,11 @@ public class Main {
         manager.addCharacter(new Character("Gatotkaca", CharacterType.WARRIOR, 7)); // level tinggi
         manager.addCharacter(new Character("Morgana", CharacterType.MAGE, 1));      // level rendah
         manager.addCharacter(new Character("Ranger", CharacterType.ARCHER, 6));
-        
+        manager.addCharacter(new Character("Lancelot", CharacterType.WARRIOR, 8));
+        manager.addCharacter(new Character("Digo", CharacterType.MAGE, 7));
+        manager.addCharacter(new Character("Viera", CharacterType.WARRIOR, 2));
+
+
         // 2. Jalankan GUI di Event Dispatch Thread
            SwingUtilities.invokeLater(() -> {
        MainWindow window = new MainWindow(manager.getAllCharacters());
