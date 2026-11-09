@@ -104,3 +104,21 @@ Struktur tampilan aplikasi Character Manager v0.5:
 
 ### C. Tampilan Jendela Dikecilkan
 ![Tampilan kecil](screenshots/kecil.png)
+
+## 3. Observasi Responsive Layout
+
+Pengujian dilakukan dengan mengubah ukuran jendela aplikasi untuk melihat
+perilaku komponen saat ukuran layar berubah.
+
+| Kondisi Jendela | Prediksi | Hasil Pengamatan |
+|---|---|---|
+| Ukuran normal | Komponen tampil sesuai susunan layout yang ditentukan. | Header, statistik, daftar karakter, legenda, dan status bar terlihat. |
+| Jendela diperlebar | Ruang horizontal bertambah dan komponen menyesuaikan ukuran. | Tampilan menjadi lebih lebar tanpa mengubah susunan utama. |
+| Jendela dikecilkan | Ruang daftar karakter berkurang dan scrollbar dapat muncul. | Scrollbar muncul sehingga daftar karakter tetap dapat diakses. |
+
+## 4. Penjelasan Nested Panels dan Layout Manager
+
+Aplikasi Character Manager menggunakan beberapa panel yang disusun secara bertingkat (nested panels). JFrame utama menggunakan BorderLayout untuk membagi area menjadi bagian header, daftar karakter, legenda, dan status bar. Pada bagian atas, createTopPanel() menggunakan BoxLayout dengan orientasi Y_AXIS untuk menyusun header dan statistics panel secara vertikal. Statistics panel menggunakan GridLayout (2, 2) agar empat informasi statistik tersusun rapi dalam dua baris dan dua kolom.
+
+GridLayout dipilih karena setiap informasi statistik memiliki ruang yang sama sehingga tampilannya konsisten. FlowLayout tidak dipilih karena susunan komponen dapat berubah mengikuti ruang horizontal yang tersedia dan kurang sesuai untuk tampilan statistik berbentuk grid.
+
