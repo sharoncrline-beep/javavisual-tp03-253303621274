@@ -122,3 +122,8 @@ Aplikasi Character Manager menggunakan beberapa panel yang disusun secara bertin
 
 GridLayout dipilih karena setiap informasi statistik memiliki ruang yang sama sehingga tampilannya konsisten. FlowLayout tidak dipilih karena susunan komponen dapat berubah mengikuti ruang horizontal yang tersedia dan kurang sesuai untuk tampilan statistik berbentuk grid.
 
+## 5. Dokumentasi Analisis TP12
+
+Analisis lengkap mengenai Layout Manager, Responsive UI, dan pemisahan Model-View dapat dibaca melalui dokumen berikut:
+
+[Google Docs - Analisis Java Visual TP12](https://docs.google.com/document/d/1-JaRKtNzQc1xXzvFG3SHxZ1jcrnBT79qrUipQl1pBtk/edit?usp=sharing)
