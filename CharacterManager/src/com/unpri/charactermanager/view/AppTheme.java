@@ -17,6 +17,9 @@ public final class AppTheme {
     public static final Color TEXT_MAIN  = Color.decode("#dfe6e9"); // teks utama: abu terang
     public static final Color TEXT_LIGHT = Color.WHITE;             // teks di atas kartu berwarna
     public static final Color GOLD       = Color.decode("#fdcb6e"); // aksen untuk karakter level
+    public static final Color BG_STATUS  = Color.decode("#0d0d1a"); // latar bar status: lebih gelap
+    public static final Color TEXT_MUTED = Color.decode("#9d9dbf"); // teks sekunder / metadata
+    public static final String APP_VERSION = "v0.5";
     public static final int HIGH_LEVEL_THRESHOLD = 5;               // level >= 5 dianggap tinggi//  tinggi
 
     // ---------- Font ----------
