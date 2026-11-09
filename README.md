@@ -69,3 +69,38 @@ terhadap tampilan.
 ### Analisis Properti & MVC (Bagian D)
 
 Link Google Docs: https://docs.google.com/document/d/1BlCfHTOSXwXQEibUCTakaCCLW-2-DNsKCJT1Lels13A/edit?tab=t.0
+
+---
+
+# TP12 - Layout Manager, Responsive UI & Analisis Layout
+## 1. Wireframe Layout
+
+Struktur tampilan aplikasi Character Manager v0.5:
+
+```text
++------------------------------------------------------+
+| HEADER: Character Manager              8 karakter    |
++------------------------------------------------------+
+|                  STATISTICS PANEL                    |
+|  Total Karakter       | Rata-rata Level              |
+|  Level Tertinggi      | Jenis Role                   |
++--------------------------------------+---------------+
+|                                      |               |
+|          DAFTAR KARAKTER             |    LEGENDA    |
+|          (JScrollPane)               |     ROLE      |
+|                                      |               |
++--------------------------------------+---------------+
+| STATUS: Total 8 karakter | Siap                 v0.5 |
++------------------------------------------------------+
+```
+
+## 2. Screenshot Hasil Pengujian
+
+### A. Tampilan Ukuran Normal
+![Tampilan normal](screenshots/normal.png)
+
+### B. Tampilan Jendela Diperlebar
+![Tampilan lebar](screenshots/lebar.png)
+
+### C. Tampilan Jendela Dikecilkan
+![Tampilan kecil](screenshots/kecil.png)
